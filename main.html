@@ -4,17 +4,59 @@
   <style>
   body {
     background-color: #3A3F4B;
+    font-family: sans-serif;
+    color: #F1F1F1;
   }
-  .gameViewCell {
+
+  div.gameViewCell {
     display: inline-block;
-    background-color: red;
+    background-color: black;
+    width: 140px;
+    padding: 0px;
+    margin:0px 5px 25px 5px;
   }
+
+
+  div.gameViewCell img {
+    width: 140px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  div.gameViewCell .gameDetails {
+    word-wrap: break-word;
+    position: relative;
+    vertical-align: top;
+    background-color: black;
+    height:65px;
+    margin:10px 5px 0px 5px;
+    padding: 0px;
+  }
+
+  div.gameViewCell .gameDetails p {
+    margin: 5px;
+    padding: 0px;
+  }
+
+  div.gameViewCell .gameDetails p.gameTitle {
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  div.gameViewCell .gameDetails p.gamePrice {
+    /* The parent container .gameDetails must be relative for the game price to align to bottom */
+    position: absolute;
+    bottom: 5px;
+    font-size: 10px;
+  }
+
   </style>
 <script>
 
   const sampleGame = {
-        "coverImageUrl" : "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcwXbHBmGEy0sI6WRRfI_JyR7CMeBUMjSBMPWSQpd92PN58Qqg4nlSfCUvaaFtGTbYw_3qK9ojPYv2B5JhAJmFDqVs_EcDLB413zJ8Uudqos4K00xN5ACoLDeR7tzgxCSyB53ShT8wcx4_matCAdQt.pkhcewZpDUaakMHmtixxJ4-&h=300&w=200&format=jpg",
-        "title" : "Hitman"
+        coverImageUrl : "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcwXbHBmGEy0sI6WRRfI_JyR7CMeBUMjSBMPWSQpd92PN58Qqg4nlSfCUvaaFtGTbYw_3qK9ojPYv2B5JhAJmFDqVs_EcDLB413zJ8Uudqos4K00xN5ACoLDeR7tzgxCSyB53ShT8wcx4_matCAdQt.pkhcewZpDUaakMHmtixxJ4-&h=300&w=200&format=jpg",
+        title : "Hitman the greatest assassin",
+        price: "230"
       };
 
   const games = Array(10).fill(sampleGame);
@@ -34,7 +76,10 @@
   `
   <div class="gameViewCell">
     <img src="${game.coverImageUrl}" />
-    <p class="gameTitle">${game.title}</p>
+    <div class="gameDetails">
+      <p class="gameTitle">${game.title}</p>
+      <p class="gamePrice">HK$${game.price}</p>
+    </div>
   </div>
   `;
   function onLoad(){
