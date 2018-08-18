@@ -4,8 +4,30 @@
   <style>
   body {
     background-color: #3A3F4B;
-    font-family: sans-serif;
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #F1F1F1;
+  }
+
+  #gameSection {
+    display: inline-block;
+    text-align: center;
+    margin: 30px;
+  }
+
+  #gameSection h1 {
+    text-align: left;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 0;
+  }
+
+  #gameLibrary{
+    background-color: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
   }
 
   div.gameViewCell {
@@ -92,6 +114,9 @@
 </head>
 
 <body onload="onLoad()">
-  <div id="gameLibrary" />
+  <div id="gameSection">
+    <h1>Game Library</h1>
+    <div id="gameLibrary" />
+  </div>
 </body>
 </html>
