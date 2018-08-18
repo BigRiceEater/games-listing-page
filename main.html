@@ -14,8 +14,13 @@
     margin: 30px;
   }
 
-  #gameSection h1 {
-    text-align: left;
+  .sectionHeader {
+    display: inline-block;
+    width:100%;
+  }
+
+  .sectionTitle {
+    float: left;
     font-size: 18px;
     margin-left: 5px;
     margin-top: 10px;
@@ -23,11 +28,37 @@
     padding: 0;
   }
 
+  .showAllButton {
+    float:right;
+    margin-top: 10px;
+    margin-right: 40px;
+    border: 1px solid black;
+    background-color: black;
+    text-align: right;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px 5px 10px;
+    opacity: 0.65;
+    transition: 0.3s;
+  }
+
+  .showAllButton img {
+    width: 15px;
+    vertical-align: top;
+    margin-right: 5px;
+  }
+  .showAllButton:hover, .showAllButton:active, .showAllButton:focus {
+    opacity: 1;
+    border: 1px solid black;
+  }
+
   #gameLibrary{
     background-color: none;
     text-align: left;
+    height: 300px;
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
 
   div.gameViewCell {
@@ -104,19 +135,45 @@
     </div>
   </div>
   `;
+
   function onLoad(){
-    const gameLibrary = document.getElementById("gameLibrary");
     games.forEach((game,index) => {
+      const gameLibrary = document.getElementById("gameLibrary");
       gameLibrary.innerHTML += gameTemplate(game);
     })
+  }
+
+  const showMoreGames = () => {
+      const gameLibrary = document.getElementById("gameLibrary");
+      const gameButton = document.getElementById("showGameLabel");
+      const libraryState = window.getComputedStyle(gameLibrary).overflow;
+      if (libraryState === 'hidden')
+      {
+        gameButton.innerHTML = "Hide";
+        gameLibrary.setAttribute("style","height: auto; overflow: visible;");
+      }
+      else {
+        gameButton.innerHTML = "Show All";
+        gameLibrary.setAttribute("style","height: 300px; overflow: hidden;");
+      }
   }
 </script>
 </head>
 
 <body onload="onLoad()">
   <div id="gameSection">
-    <h1>Game Library</h1>
+    <div class="sectionHeader">
+      <h1 class="sectionTitle">Game Library</h1>
+      <button class="showAllButton" onclick="showMoreGames()">
+        <img src="showallbuttonicon.png"/>  <span id="showGameLabel">Show all<span>
+      </button>
+    </div>
     <div id="gameLibrary" />
+  </div>
+  <div id="videoSection">
+    <div class="sectionHeader">
+      <h1 class="sectionTitle">Video Library</h1>
+    </div>
   </div>
 </body>
 </html>
