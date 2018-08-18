@@ -1,0 +1,52 @@
+<html>
+<head>
+
+  <style>
+  body {
+    background-color: #3A3F4B;
+  }
+  .gameViewCell {
+    display: inline-block;
+    background-color: red;
+  }
+  </style>
+<script>
+
+  const sampleGame = {
+        "coverImageUrl" : "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcwXbHBmGEy0sI6WRRfI_JyR7CMeBUMjSBMPWSQpd92PN58Qqg4nlSfCUvaaFtGTbYw_3qK9ojPYv2B5JhAJmFDqVs_EcDLB413zJ8Uudqos4K00xN5ACoLDeR7tzgxCSyB53ShT8wcx4_matCAdQt.pkhcewZpDUaakMHmtixxJ4-&h=300&w=200&format=jpg",
+        "title" : "Hitman"
+      };
+
+  const games = Array(10).fill(sampleGame);
+/*
+  const games = [
+    {
+      "coverImageUrl" : "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcwXbHBmGEy0sI6WRRfI_JyR7CMeBUMjSBMPWSQpd92PN58Qqg4nlSfCUvaaFtGTbYw_3qK9ojPYv2B5JhAJmFDqVs_EcDLB413zJ8Uudqos4K00xN5ACoLDeR7tzgxCSyB53ShT8wcx4_matCAdQt.pkhcewZpDUaakMHmtixxJ4-&h=300&w=200&format=jpg",
+      "title" : "Hitman"
+    },
+    {
+      "coverImageUrl" : "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcwXbHBmGEy0sI6WRRfI_JyR7CMeBUMjSBMPWSQpd92PN58Qqg4nlSfCUvaaFtGTbYw_3qK9ojPYv2B5JhAJmFDqVs_EcDLB413zJ8Uudqos4K00xN5ACoLDeR7tzgxCSyB53ShT8wcx4_matCAdQt.pkhcewZpDUaakMHmtixxJ4-&h=300&w=200&format=jpg",
+      "title" : "Hitman"
+    }
+  ];*/
+
+  const gameTemplate = (game) =>
+  `
+  <div class="gameViewCell">
+    <img src="${game.coverImageUrl}" />
+    <p class="gameTitle">${game.title}</p>
+  </div>
+  `;
+  function onLoad(){
+    const gameLibrary = document.getElementById("gameLibrary");
+    games.forEach((game,index) => {
+      gameLibrary.innerHTML += gameTemplate(game);
+    })
+  }
+</script>
+</head>
+
+<body onload="onLoad()">
+  <div id="gameLibrary" />
+</body>
+</html>
