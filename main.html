@@ -6,9 +6,126 @@
   <!-- can use build tools to remedy this case later -->
   <script src="games.js"></script>
   <script src="main.js"></script>
+
+  <style>
+    #latestReleaseSection {
+      margin-left: 35px;
+      margin-right: 35px;
+      display: grid;
+      grid-gap: 5px;
+      grid-template-columns: auto auto auto auto;
+      grid-template-rows: 100px 100px 100px;
+    }
+
+    .releaseImg {
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .releaseTitle {
+      word-wrap: break-word;
+      position: absolute;
+      bottom: -10px;
+      left: 5px;
+    }
+
+  .releaseMenu {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-row-gap: 5px;
+  }
+
+    .latestReleaseItem {
+      text-align: center;
+      vertical-align: middle;
+      position: relative;
+      border: 0px solid white;
+      background-color: none;
+      margin: 0px;
+      padding: 0px;
+      overflow: hidden;
+
+    }
+
+    .releaseButton {
+      display: block;
+      text-align:left;
+      text-decoration: none;
+      background-color: black;
+      opacity: 0.8;
+      color: white;
+      border: 0px solid white;
+      margin: 0;
+      padding-bottom: 5px;
+      width: 100%;
+    }
+
+    .releaseButtonContainer{
+      background-color: none;
+    }
+
+    .releaseButton:hover {
+      transition: 0.3s;
+      opacity: 1;
+    }
+
+    .releaseButtonLabel {
+
+    }
+
+    #mainReleaseItem {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+
+  </style>
 </head>
 
 <body onload="onLoad()">
+
+  <div id="latestReleaseSection">
+    <div id="mainReleaseItem" class="latestReleaseItem">
+      <img class="releaseImg" src="https://www.destructoid.com//ul/494252-header%20one.jpg" />
+    </div>
+    <div id="release1" class="latestReleaseItem">
+      <img class="releaseImg" src="http://iris.theaureview.com/wp-content/uploads/2018/06/anthem-672x372.jpg" />
+      <p class="releaseTitle">Anthem</p>
+    </div>
+    <div id="release2" class="latestReleaseItem">
+      <img class="releaseImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1nxdKrLE4GkAR03ieCH5h9TfG80OQBDZhzJPpQMzseWrkysPHOA" />
+      <p class="releaseTitle">Pro Evolution Soccer 2018</p>
+    </div>
+
+    <div class="latestReleaseItem releaseMenu">
+      <div class="latestReleaseItem releaseButtonContainer">
+        <button class="releaseButton"><p class="releaseButtonLabel">Search games</p></button>
+      </div>
+      <div class="latestReleaseItem releaseButtonContainer">
+        <button class="releaseButton"><p class="releaseButtonLabel">Extra</p></button>
+      </div>
+     </div>
+     <div class="latestReleaseItem releaseMenu">
+       <div class="latestReleaseItem releaseButtonContainer">
+         <button class="releaseButton"><p class="releaseButtonLabel">All games</p></button>
+       </div>
+       <div class="latestReleaseItem releaseButtonContainer">
+         <button class="releaseButton"><p class="releaseButtonLabel">Deals</p></button>
+       </div>
+      </div>
+
+      <div id="release1" class="latestReleaseItem">
+        <img class="releaseImg" src="https://cdn.arstechnica.net/wp-content/uploads/2018/03/gtavgtav.jpg"/>
+        <p class="releaseTitle">GTA V</p>
+      </div>
+      <div id="release2" class="latestReleaseItem">
+        <img class="releaseImg" src="https://res.cloudinary.com/lmn/image/upload/e_sharpen:100/f_auto,fl_lossy,q_auto/v1/gameskinnyc/u/n/t/untitled-ca112.jpg"/>
+        <p class="releaseTitle">State of Decay 2</p>
+      </div>
+  </div>
+
   <div id="gameSection">
     <div class="sectionHeader">
       <h1 class="sectionTitle">Game Library</h1>
