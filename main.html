@@ -1,7 +1,8 @@
 <html>
 <head>
   <title>Game Library</title>
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="main.css"></link>
+  <link rel="icon" href="xbox-icon.png"></link
   <!-- main.js cannot import gamesjson.js thus it has to be included here instead -->
   <!-- can use build tools to remedy this case later -->
   <script src="games.js"></script>
@@ -59,15 +60,27 @@
       margin: 0;
       padding-bottom: 5px;
       width: 100%;
+      height: inherit;
     }
 
     .releaseButtonContainer{
       background-color: none;
+      height: 50px;
+
     }
 
     .releaseButton:hover {
       transition: 0.3s;
       opacity: 1;
+    }
+    .releaseButtonIcon
+    {
+      display: inline;
+      vertical-align: bottom;
+      width: 20px;
+      color: white;
+      margin-left: 5px;
+      margin-right: 5px;
     }
 
     .releaseButtonLabel {
@@ -101,7 +114,10 @@
 
     <div class="latestReleaseItem releaseMenu">
       <div class="latestReleaseItem releaseButtonContainer">
-        <button class="releaseButton"><p class="releaseButtonLabel">Search games</p></button>
+        <button class="releaseButton">
+          <img class="releaseButtonIcon" src="controller-white-icon.png" />
+          <span class="releaseButtonLabel">Search games</span>
+        </button>
       </div>
       <div class="latestReleaseItem releaseButtonContainer">
         <button class="releaseButton"><p class="releaseButtonLabel">Extra</p></button>
